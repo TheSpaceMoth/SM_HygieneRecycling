@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ModMetaData>
+  <name>Hygiene Recycled</name>
+  <author>SpaceMoth</author>
+  <url></url>
+  <packageId>Spacemoth.HygieneRecycled</packageId>
+  <description>This mod will add dubs hygiene functionality to junk items littered across the world. Just don't expect a pleasant experience.
+
+This mod requires either Ideology or Vanilla Genetics Expanded and will let the Toilets, Sinks and Hydrant function. 
+</description>
+  <supportedVersions>
+    <li>1.3</li>
+  </supportedVersions>
+  <modDependencies>
+	<li>
+		<packageId>Dubwise.DubsBadHygiene</packageId>
+		<displayName>Dubs Bad Hygiene</displayName>
+		<downloadUrl>https://steamcommunity.com/workshop/filedetails/?id=836308268</downloadUrl>
+		<steamWorkshopUrl>steam://url/CommunityFilePage/836308268</steamWorkshopUrl>
+	</li>
+  </modDependencies>
+  <loadAfter>
+        <li>Dubwise.DubsBadHygiene</li>
+  </loadAfter>
+</ModMetaData>
