@@ -121,7 +121,7 @@
 		</match>
 	</Operation>
 		
-
+<!--
 	<Operation Class="PatchOperationConditional">
 		<xpath>/Defs/ThingDef[defName="AncientToilet"]/comps/li[@Class="DubsBadHygiene.CompProperties_Pipe"]</xpath>
 		<nomatch Class="PatchOperationSequence">
@@ -155,7 +155,7 @@
 				</li>
 			</operations>
 		</nomatch>
-	</Operation>
+	</Operation>-->
 	
 	<Operation Class="PatchOperationConditional">
 		<xpath>/Defs/ThingDef[defName="AncientHydrant"]/comps/li[@Class="DubsBadHygiene.CompProperties_Pipe"]</xpath>
@@ -211,6 +211,7 @@
 		</nomatch>
 	</Operation>
 	
+	<!--
 	<Operation Class="PatchOperationConditional" MayRequire="ludeon.rimworld.ideology">
 		<xpath>/Defs/ThingDef[defName="AncientToilet"]/minifiedDef</xpath>
 		<nomatch Class="PatchOperationSequence">
@@ -233,7 +234,7 @@
 				</li>
 			</operations>
 		</nomatch>
-	</Operation>
+	</Operation>-->
 	
 	<Operation Class="PatchOperationConditional" MayRequire="ludeon.rimworld.ideology">
 		<xpath>/Defs/ThingDef[defName="AncientHydrant"]/minifiedDef</xpath>
@@ -273,12 +274,13 @@
 					<description>An ancient hydrant. Heavily rusted, it might be possible to use for a little water.\n\nHow it got here is hard to say.</description>
 				</value>
 			</li>
+			<!--
 			<li Class="PatchOperationReplace" MayRequire="ludeon.rimworld.ideology">
 				<xpath>/Defs/ThingDef[defName="AncientToilet"]/description</xpath>
 				<value>
 					<description>An ancient toilet. Dirty and broken, not going to be pleasent to use.\n\nHow it got here is hard to say.</description>
 				</value>
-			</li>
+			</li>-->
 			<!-- etc -->
 		</operations>
 	</Operation>

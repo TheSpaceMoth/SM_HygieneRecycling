@@ -9,7 +9,7 @@ using Verse.Sound;
 
 namespace HygieneRecycling
 {
-    public class Building_JunkToilet : Building_BaseToilet
+    public class Building_JunkToilet : Building_toilet
     {
         public new float waterUsed = 20.0f;
 

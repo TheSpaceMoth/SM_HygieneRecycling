@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Genetics Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAttributeAdd">
+					<xpath>/Defs/ThingDef[defName="GR_Sink"]</xpath>
+					<attribute>DBHThirstAddon</attribute>
+					<value>true</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="GR_Sink"]</xpath>
+					<value>
+						<thingClass>DubsBadHygiene.Building_basin</thingClass>
+						<!--<hasInteractionCell>true</hasInteractionCell>-->
+						<!--<interactionCellOffset>(0,0,-1)</interactionCellOffset>-->
+						<placeWorkers>
+							<li>DubsBadHygiene.PlaceWorker_SewageGrid</li>
+						</placeWorkers>
+						<comps>
+							<li Class="CompProperties_Forbiddable"/>
+							<li Class="DubsBadHygiene.CompProperties_Pipe">
+								<mode>Sewage</mode>
+							</li>
+							<li Class="DubsBadHygiene.CompProperties_Blockage"/>
+						</comps>
+					</value>
+				</li>
+				<!--
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="GR_Sink"]/interactionCellOffset</xpath>
+					<value>
+						<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+					</value>
+				</li>-->
+			
+				<!-- etc -->
+			</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Genetics Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="GR_Toilet"]</xpath>
+					<value>
+						<thingClass>HygieneRecycling.Building_JunkToilet</thingClass>
+						<socialPropernessMatters>true</socialPropernessMatters>
+						<building>
+							<isSittable>true</isSittable>
+							<ai_chillDestination>false</ai_chillDestination>
+						</building>
+						<placeWorkers>
+							<li>DubsBadHygiene.PlaceWorker_SewageGrid</li>
+						</placeWorkers>
+						<comps>
+							<li Class="CompProperties_Forbiddable"/>
+							<li Class="DubsBadHygiene.CompProperties_Pipe">
+								<mode>Sewage</mode>
+							</li>
+							<li Class="DubsBadHygiene.CompProperties_Blockage"/>
+						</comps>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="GR_Toilet"]/statBases</xpath>
+					<value>
+						<Comfort>-3</Comfort>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+	
+	
+	<!-- For the minify functionality. Might be added by other mods -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Genetics Expanded</li>
+		</mods>
+		<match Class="PatchOperationConditional">
+			<xpath>/Defs/ThingDef[defName="GR_Sink"]/minifiedDef</xpath>
+			<nomatch Class="PatchOperationSequence">
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="GR_Sink"]</xpath>
+						<value>
+							<thingCategories>
+								<li>BuildingsHygiene</li>
+							</thingCategories>
+							<minifiedDef>MinifiedThing</minifiedDef>
+							<rotatable>true</rotatable>
+						</value>
+					</li>
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="GR_Sink"]/statBases</xpath>
+						<value>
+							<Mass>15</Mass>
+						</value>
+					</li>
+				</operations>
+			</nomatch>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Genetics Expanded</li>
+		</mods>
+		<match Class="PatchOperationConditional">
+			<xpath>/Defs/ThingDef[defName="GR_Toilet"]/minifiedDef</xpath>
+			<nomatch Class="PatchOperationSequence">
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="GR_Toilet"]</xpath>
+						<value>
+							<thingCategories>
+								<li>BuildingsHygiene</li>
+							</thingCategories>
+							<minifiedDef>MinifiedThing</minifiedDef>
+							<rotatable>true</rotatable>
+						</value>
+					</li>
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="GR_Toilet"]/statBases</xpath>
+						<value>
+							<Mass>15</Mass>
+						</value>
+					</li>
+				</operations>
+			</nomatch>
+		</match>
+	</Operation>
+</Patch>

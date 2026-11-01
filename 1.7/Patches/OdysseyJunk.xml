@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- For the hygiene functionality. Might be added by other mods -->
+	
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="AncientBathtub"]</xpath>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientBathtub"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+						
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientBathtub"]/comps/li[@Class="DubsBadHygiene.CompProperties_Pipe"]</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]/comps</xpath>
+						<value>
+							<li Class="DubsBadHygiene.CompProperties_Pipe">
+								<mode>Sewage</mode>
+							</li>
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientBathtub"]/comps/li[@Class="CompProperties_Forbiddable"]</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]/comps</xpath>
+						<value>
+							<li Class="CompProperties_Forbiddable" />
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientBathtub"]/comps/li[@Class="DubsBadHygiene.CompProperties_Blockage"]</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]/comps</xpath>
+						<value>
+							<li Class="DubsBadHygiene.CompProperties_Blockage" />
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientBathtub"]/placeWorkers</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]</xpath>
+						<value>
+							<placeWorkers/>
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientBathtub"]/placeWorkers/li[@Class="DubsBadHygiene.PlaceWorker_SewageGrid"]</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]/placeWorkers</xpath>
+						<value>
+							<li>DubsBadHygiene.PlaceWorker_SewageGrid</li>
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientBathtub"]/socialPropernessMatters</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]</xpath>
+						<value>		
+							<socialPropernessMatters>true</socialPropernessMatters>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]/socialPropernessMatters</xpath>
+						<value>		
+							<socialPropernessMatters>true</socialPropernessMatters>
+						</value>					
+					</match>
+				</li>								
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientBathtub"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+										
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientBathtub"]/hasInteractionCell</xpath>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]/hasInteractionCell</xpath>
+						<value>
+							<hasInteractionCell>false</hasInteractionCell>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]</xpath>
+						<value>
+							<hasInteractionCell>false</hasInteractionCell>
+						</value>
+					</nomatch>
+				</li>
+								
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientBathtub"]/thingClass</xpath>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]/thingClass</xpath>
+						<value>
+							<thingClass>DubsBadHygiene.Building_bath</thingClass>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]</xpath>
+						<value>
+							<thingClass>DubsBadHygiene.Building_bath</thingClass>
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientBathtub"]/hasInteractionCell</xpath>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]/hasInteractionCell</xpath>
+						<value>
+							<hasInteractionCell>false</hasInteractionCell>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientBathtub"]</xpath>
+						<value>
+							<hasInteractionCell>false</hasInteractionCell>
+						</value>
+					</nomatch>
+				</li>
+			</operations>
+		</match>
+	</Operation>		
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="AncientShower"]</xpath>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientShower"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientShower"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+						
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientShower"]/comps/li[@Class="DubsBadHygiene.CompProperties_Pipe"]</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientShower"]/comps</xpath>
+						<value>
+							<li Class="DubsBadHygiene.CompProperties_Pipe">
+								<mode>Sewage</mode>
+							</li>
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientShower"]/comps/li[@Class="CompProperties_Forbiddable"]</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientShower"]/comps</xpath>
+						<value>
+							<li Class="CompProperties_Forbiddable" />
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientShower"]/comps/li[@Class="DubsBadHygiene.CompProperties_Blockage"]</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientShower"]/comps</xpath>
+						<value>
+							<li Class="DubsBadHygiene.CompProperties_Blockage" />
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientShower"]/placeWorkers</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientShower"]</xpath>
+						<value>
+							<placeWorkers/>
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientShower"]/placeWorkers/li[@Class="DubsBadHygiene.PlaceWorker_SewageGrid"]</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientShower"]/placeWorkers</xpath>
+						<value>
+							<li>DubsBadHygiene.PlaceWorker_SewageGrid</li>
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientShower"]/socialPropernessMatters</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientShower"]</xpath>
+						<value>		
+							<socialPropernessMatters>true</socialPropernessMatters>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/ThingDef[defName="AncientShower"]/socialPropernessMatters</xpath>
+						<value>		
+							<socialPropernessMatters>true</socialPropernessMatters>
+						</value>					
+					</match>
+				</li>								
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientShower"]/comps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientShower"]</xpath>
+						<value>
+							<comps/>
+						</value>
+					</nomatch>
+				</li>
+										
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientShower"]/hasInteractionCell</xpath>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/ThingDef[defName="AncientShower"]/hasInteractionCell</xpath>
+						<value>
+							<hasInteractionCell>false</hasInteractionCell>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientShower"]</xpath>
+						<value>
+							<hasInteractionCell>false</hasInteractionCell>
+						</value>
+					</nomatch>
+				</li>
+								
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientShower"]/thingClass</xpath>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/ThingDef[defName="AncientShower"]/thingClass</xpath>
+						<value>
+							<thingClass>DubsBadHygiene.Building_Shower</thingClass>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientShower"]</xpath>
+						<value>
+							<thingClass>DubsBadHygiene.Building_Shower</thingClass>
+						</value>
+					</nomatch>
+				</li>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="AncientShower"]/hasInteractionCell</xpath>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/ThingDef[defName="AncientShower"]/hasInteractionCell</xpath>
+						<value>
+							<hasInteractionCell>false</hasInteractionCell>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="AncientShower"]</xpath>
+						<value>
+							<hasInteractionCell>false</hasInteractionCell>
+						</value>
+					</nomatch>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+		
+	<!-- For the minify functionality. Might be added by other mods -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="AncientBathtub"]/minifiedDef</xpath>
+		<nomatch Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd" MayRequire="ludeon.rimworld.odyssey">
+					<xpath>/Defs/ThingDef[defName="AncientBathtub"]</xpath>
+					<value>
+						<thingCategories>
+							<li>BuildingsHygiene</li>
+						</thingCategories>
+						<minifiedDef>MinifiedThing</minifiedDef>
+						<rotatable>true</rotatable>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd" MayRequire="ludeon.rimworld.odyssey">
+					<xpath>/Defs/ThingDef[defName="AncientBathtub"]/statBases</xpath>
+					<value>
+						<Mass>15</Mass>
+						<Comfort>-3</Comfort>
+					</value>
+				</li>
+			</operations>
+		</nomatch>
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional" MayRequire="ludeon.rimworld.odyssey">
+		<xpath>/Defs/ThingDef[defName="AncientShower"]/minifiedDef</xpath>
+		<nomatch Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd" MayRequire="ludeon.rimworld.odyssey">
+					<xpath>/Defs/ThingDef[defName="AncientShower"]</xpath>
+					<value>
+						<thingCategories>
+							<li>BuildingsHygiene</li>
+						</thingCategories>
+						<minifiedDef>MinifiedThing</minifiedDef>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd" MayRequire="ludeon.rimworld.odyssey">
+					<xpath>/Defs/ThingDef[defName="AncientShower"]/statBases</xpath>
+					<value>
+						<Mass>15</Mass>
+						<Comfort>-1</Comfort>
+					</value>
+				</li>
+			</operations>
+		</nomatch>
+	</Operation>
+	
+	<!-- Finally update the descriptions to make things interesting. This will override so no checks needed -->
+	<Operation Class="PatchOperationSequence">
+		<operations>			
+			<li Class="PatchOperationReplace" MayRequire="ludeon.rimworld.odyssey">
+				<xpath>/Defs/ThingDef[defName="AncientBathtub"]/description</xpath>
+				<value>
+					<description>A bathtub with deep cracks and rust stains. It's barely usable but leaks.</description>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace" MayRequire="ludeon.rimworld.odyssey">
+				<xpath>/Defs/ThingDef[defName="AncientShower"]/description</xpath>
+				<value>
+					<description>A heavily damaged shower stall. The plumbing leaks and the ceramics are shattered.</description>
+				</value>
+			</li>
+			<!-- etc -->
+		</operations>
+	</Operation>
+	
+</Patch>
